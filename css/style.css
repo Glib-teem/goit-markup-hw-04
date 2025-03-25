@@ -78,9 +78,11 @@ img {
   padding-top: 120px;
   padding-bottom: 120px;
 }
-
+/* header */
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -159,11 +161,18 @@ img {
 .header-address-link:focus {
   color: #404bbf;
 }
-
+/* section-1 */
 .hero {
   background-color: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/);
 }
 
 .hero-title {
@@ -194,8 +203,8 @@ img {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.hero-btn:hover,
-.hero-btn:focus {
+.hero-button:hover,
+.hero-button:focus {
   background-color: #404bbf;
 }
 

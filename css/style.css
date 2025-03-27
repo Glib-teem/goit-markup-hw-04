@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #434455;
   background-color: #ffffff;
 }
@@ -81,8 +81,8 @@ img {
 /* header */
 .header {
   border-bottom: 1px solid #e7e9fc;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -96,7 +96,7 @@ img {
 }
 
 .header-logo {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
@@ -116,11 +116,8 @@ img {
   display: flex;
   gap: 40px;
 }
-
-.header-menu-item {
-}
-
 .header-menu-link {
+  position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -128,11 +125,30 @@ img {
   color: #2e2f42;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.header-menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  opacity: 0;
+}
 .header-menu-link:hover,
-.header-menu-link:focus {
+.header-menu-link:focus,
+.header-menu-link.current {
   color: #404bbf;
+}
+.header-menu-link:hover:after,
+.header-menu-link:focus:after,
+.header-menu-link.current:after {
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-address {
@@ -145,21 +161,35 @@ img {
   gap: 40px;
 }
 
-.header-address-item {
-}
-
 .header-address-link {
+  position: relative;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
   padding-top: 24px;
   padding-bottom: 24px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.header-address-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
+  opacity: 0;
+}
 .header-address-link:hover,
 .header-address-link:focus {
   color: #404bbf;
+}
+.header-address-link:hover::after,
+.header-address-link:focus:after {
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* section-1 */
 .hero {
@@ -305,7 +335,7 @@ img {
 }
 
 .footer-logo {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
